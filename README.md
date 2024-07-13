@@ -7,8 +7,7 @@ Repo for storing my project files.
 ## Content of Repository
 | Folder   | Description | Date of creation |
 | -------- | -------- | -------- |
-| Row 1    | Data     | Data     |
-| Row 2    | Data     | Data     |
+| Embedded-Systems    | Project Files for Embedded-Systems semster project     | 26. June 2024     |
 
 
 ## Prerequisites
