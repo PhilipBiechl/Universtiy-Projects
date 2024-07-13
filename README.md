@@ -1,14 +1,11 @@
 # University Projects by Philip Biechl
-
+Repo for storing my project files.
 
 ## Table of contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Content](## Content of Repository)
 
 ## Content of Repository
-| Folder   | Column 2 | Column 3 |
+| Folder   | Description | Date of creation |
 | -------- | -------- | -------- |
 | Row 1    | Data     | Data     |
 | Row 2    | Data     | Data     |
