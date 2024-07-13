@@ -2,7 +2,7 @@
 Repo for storing my project files.
 
 ## Table of contents
-- [Content](#Content of Repository)
+- [Content](#content)
 
 ## Content of Repository
 | Folder   | Description | Date of creation |
