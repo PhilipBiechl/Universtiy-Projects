@@ -1,1 +1,175 @@
+<!--
+    Author:     Philip Biechl                                                            
+    Project:    Embedded Systems - Building Blocks   
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Display App</title>
+        
+    <script src="chart.js"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+    </div>
 
+    <div class="main-container">
+        <div class="head">
+            <div class="left-top">
+                <h1>Temperature Data</h1>
+                <p id="device-name">Displayed here to track temperature regulated by the device: ---</p>    
+            </div>
+            <div class="right-top">
+                <form id="dataForm">
+                    <select id="dropdown" class="dropdown">
+                        <option value="option1">Temperature Chart</option>
+                        <option value="option2">Room Simulation</option>
+                        <option value="option3">Informations</option>
+                    </select>
+                </form>
+            </div>
+            </div>
+        <div class="row">
+            <div class="column left">
+                <div class="top-box">
+                    <div id="conn-on-0" class="line-zero">
+                        <h2><a class="live-dot"></a>Live Data</h2>
+                    </div>
+                    <div id="conn-off" class="connection-lost">
+                        <h2>connection lost</a></h2>
+                    </div>
+                    <table cellspacing="10vw">
+                        <tr>
+                            <th scope="row">Current Temperature:</th>
+                            <td></td>
+                            <td><span id="currentTemperature">--</span>°C</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Wanted Temperature:</th>
+                            <td></td>
+                            <td><span id="wantedTemperature">--</span>°C</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Regulated Temperature:</th>
+                            <td></td>
+                            <td><span id="regulatedTemperature">--</span>°C</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="line-two">
+                    <h2>Device data</h2>
+                </div>
+                <div class="line-four">
+                    <table cellspacing="10vw">
+                        <tr>
+                            <th scope="row">Humidity:</th>
+                            <td></td>
+                            <td><span id="humidityValue">--</span>%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Simulation:</th>
+                            <td></td>
+                            <td><span id="simValue">--</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Regulation:</th>
+                            <td></td>
+                            <td><span id="regValue">--</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">SSID:</th>
+                            <td></td>
+                            <td><span id="ssidValue">--</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Device:</th>
+                            <td></td>
+                            <td><span id="deviceValue">--</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="conn-on-1" class="line-six">
+                    <table cellspacing="10vw">
+                        <tr>
+                            <th scope="row">Temperature sensor:</th>
+                            <td></td>
+                            <td><a class="green-dot"></a></td>
+                            <td><p style="color:green">Aktiv</p></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Heating control:</th>
+                            <td></td>
+                            <td><a class="waiting-dot"></a></td>
+                            <td><p style="color:yellow">Warte</p></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div>
+                    <button onclick="toggleReg()" class="button one"><span id="regulateModeA">Internal controller</span></button>
+                </div>
+                <div>
+                    <button onclick="toggleSim()" class="button two"><span id="regulateModeB">Simulate Temperature</span></button>
+                </div>
+            </div>
+            <div class="column right">
+                <div id="content1" class="content-section" style="display: none;">
+                    <div class="simulation-field">
+                        <div class="achse"></div>
+                        <div class="servo"></div>
+                        <div id="rotor-1" class="rotor"></div>
+                    </div>
+                    <div id="conn-on-2" class="chart-field">
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+                </div>
+                <div id="content2" class="content-section" style="display: none;">
+                    <h1>Simulation as heated room</h1>
+                    <div class="simulation-field">
+                        <div id="room" class="room"></div>
+                        <div class="achse"></div>
+                        <div class="servo"></div>
+                        <div class="achse1"></div>
+                        <div id="rotor-2" class="rotor"></div>
+                        <div id="heater" class="heater"></div>
+                    </div>
+                </div>
+                <div id="content3" class="content-section" style="display: none;">
+                    <h1>Control parameters</h1>
+                    <br>
+                    <span id="pid">--</span>
+                    <br>
+                    <form id="dataForm">
+                        <br>
+                        <label for="field1">Controller sensitivity:</label>
+                        <input type="number" id="field1" class="params" name="field1" required>
+                        <br><br><br><br>
+                        <label for="field2">Controller deflection:</label>
+                        <input type="number" id="field2" class="params" name="field2" required>
+                        <a></a>
+                        <br><br><br><br>
+                        <button type="button" class="params" id="sendDataButton">Send paramters to controller <a id="response-message" class="align-dot"></a></button>
+                    </form>
+                    <br><br><br><br>
+                    <p>Information:</p>
+                    <p>Use of open-source software "Chart.js" is used to display the temperature chart.</p>
+                    <p>Chart.js v2.9.4
+                        * https://www.chartjs.org
+                        * (c) 2020 Chart.js Contributors
+                        * Released under the MIT License</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 Philip Biechl. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

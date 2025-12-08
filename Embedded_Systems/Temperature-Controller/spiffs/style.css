@@ -1,0 +1,348 @@
+/*********************************************************************************************/
+/**  Author:     Philip Biechl                                                              **/
+/**  Project:    Embedded Systems - Building Blocks                                         **/
+/*********************************************************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+}
+
+.head, right, left {
+    padding: 1.5vh;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 61, 0.9); 
+    z-index: -1;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+}
+  
+.left {
+    width: 25%;
+    height: 100%;
+    background-size: cover;
+    background: rgba(34, 34, 34, 0.9); 
+}
+  
+.right {
+    width: 75%;
+}
+
+.left-top {
+    float: left;
+    height: 100%;
+    width: 100%;
+    width: 75%;
+    height: 100%;
+    background-size: cover;
+}
+  
+.right-top {
+    float: right;
+    height: 100%;
+    width: 100%;
+    width: 25%;
+}
+
+.simulation-field {
+    height: 25%;
+}
+
+.chart-field {
+    padding-top: 15%;
+}
+
+.head {
+    height: 10%;
+    background: rgba(0, 0, 0, 0.8); 
+}
+
+.head:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    height: 85%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+td, th {
+    text-align: left;
+}
+
+th {
+    width: 72.5%;
+}
+
+.line-zero {
+    margin: 5% 0 5% 22.5%;
+}
+
+.connection-lost {
+    margin: 5% 0 5% 15.5%;
+    color: red;
+}
+
+.line-two {
+    text-align: center;
+    margin: 5% 0;
+}
+
+.top-box {
+    background-color: rgb(41, 41, 41);
+    border-radius: 1.25vw;
+    padding: 0 0 5% 10%;
+}
+
+.button {
+    position: fixed;
+    background-color: rgb(41, 41, 41);
+    border-radius: 1.25vw;
+    color: white;
+    border: 2px solid #1d1d1d; 
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    left: 1.25%;
+    height: 7.5%;
+    width: 22.5%;
+}
+
+.dropdown {
+    position: fixed;
+    background-color: rgb(41, 41, 41);
+    border-radius: 1.25vw;
+    color: white;
+    border: 2px solid #1d1d1d; 
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    right: 1.25%;
+    height: 7.5%;
+    width: 22.5%;
+}
+
+.params {
+    position: absolute;
+    background-color: rgb(41, 41, 41);
+    border-radius: 1.25vw;
+    color: white;
+    border: 2px solid #1d1d1d; 
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    left: 45%;
+    height: 7.5%;
+    width: 30%;
+}
+
+.button:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+.button:active {
+  background-color: rgb(30, 30, 30);
+}
+
+.params:hover {
+    background-color: rgb(48, 48, 48);
+}
+
+.params:active {
+  background-color: rgb(30, 30, 30);
+}
+
+.one {
+    bottom: 18%;
+}
+
+.two {
+    bottom: 9%;
+}
+
+.main-container {
+    position: fixed;
+    margin: 0 auto;
+    color: white;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    min-height: 80vh;
+    margin-bottom: 60px; 
+    overflow-y: auto;
+}
+
+.rotor {
+    position: fixed;
+    width: 5em;      
+    height: 5em;     
+    background-color: azure;
+    border-radius: 0 50% 50% 50%; 
+    transition: transform 0.75s ease-in-out;
+    align-items: center;
+    left: 70%;
+    bottom: 73%;
+}
+
+.room {
+    position: fixed;
+    background-color: rgb(35, 29, 120);
+    border-radius: 1.25vw;
+    color: white;
+    border: 2px solid #1d1d1d; 
+    left: 33%;
+    bottom: 20%;
+    height: 50%;
+    width: 60%;
+}
+
+.servo {
+    position: fixed;
+    background-color: rgb(35, 29, 120);
+    border-radius: 1.25vw;
+    color: white;
+    border: 2px solid #1d1d1d; 
+    left: 45%;
+    bottom: 75%;
+    height: 7.5%;
+    width: 15%;
+}
+
+.achse {
+    position: fixed;
+    background-color: rgb(105, 105, 105);
+    border-radius: 1.25vw;
+    color: white;
+    border: 2px solid #1d1d1d; 
+    left: 50%;
+    bottom: 77.5%;
+    height: 2.5%;
+    width: 25%;
+}
+
+.achse1 {
+    position: fixed;
+    background-color: rgb(105, 105, 105);
+    border-radius: 1.25vw;
+    color: white;
+    border: 2px solid #1d1d1d; 
+    left: 72%;
+    bottom: 50%;
+    height: 25%;
+    width: 1.5%;
+}
+
+.heater {
+    position: fixed;
+    background-color: rgb(35, 29, 120);
+    border-radius: 1.25vw;
+    color: white;
+    border: 2px solid #1d1d1d; 
+    left: 55%;
+    bottom: 35%;
+    height: 20%;
+    width: 25%;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    padding: 10px 0 25px 0;
+    background: rgb(25, 25, 25);
+    text-align: center;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.live-dot {
+    width: 0.8em;      
+    height: 0.8em;     
+    background-color: red;
+    border-radius: 50%; 
+    animation: blink 1s infinite ease;
+    display: inline-block;
+    align-items: center;
+    margin-right: 0.8rem;
+}
+
+.red-dot {
+    width: 0.8em;      
+    height: 0.8em;     
+    background-color: red;
+    border-radius: 50%; 
+    display: inline-block;
+    align-items: center;
+    margin-right: 0.8rem;
+}
+
+.waiting-dot {
+    width: 0.8em;      
+    height: 0.8em;     
+    background-color: yellow;
+    border-radius: 50%; 
+    animation: blink 1s infinite ease;
+    display: inline-block;
+    align-items: center;
+    margin-left: 0.75vw;
+}
+
+.green-dot {
+    width: 0.8em;      
+    height: 0.8em;     
+    background-color: green;
+    border-radius: 50%; 
+    display: inline-block;
+    align-items: center;
+    margin-left: 0.75vw;
+}
+
+.align-dot {
+    width: 0.5em;      
+    height: 0.5em;     
+    background-color: green;
+    border-radius: 50%; 
+    display: inline-block;
+    align-items: center;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1; }
+    }
