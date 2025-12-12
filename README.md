@@ -1,5 +1,5 @@
-# University Projects by Philip Biechl
-Repo for storing my project files.
+# University Projects
+Repo for storing my project files (not up to date, yet work in progress to get projects to git).
 
 ## Table of contents
 - [Introduction](##Introduction)
